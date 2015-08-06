@@ -1,0 +1,13 @@
+{
+  "name": "jwt-auth-server",
+  "main": "server.js",
+  "dependencies": {
+    "bcrypt": "^0.8.4",
+    "body-parser": "^1.13.3",
+    "express": "^4.13.3",
+    "jsonwebtoken": "^5.0.4",
+    "mongoose": "^4.1.1",
+    "morgan": "^1.6.1",
+    "randomstring": "^1.0.7"
+  }
+}
