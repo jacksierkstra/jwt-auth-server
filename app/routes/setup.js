@@ -1,4 +1,4 @@
-var User   = require('../common/authentication/models/user');
+var User   = require('../models/user');
 
 var setupRoutes = function(app, apiRoutes) {
 

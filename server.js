@@ -8,7 +8,7 @@ var morgan      = require('morgan');
 var mongoose    = require('mongoose');
 
 var config = require('./config'); // get our config file
-var User   = require('./app/modules/common/authentication/models/user'); // get our mongoose model
+// var User   = require('./app/modules/common/authentication/models/user'); // get our mongoose model
 
 // =======================
 // configuration =========
@@ -28,8 +28,8 @@ app.use(morgan('dev'));
 // routes ================
 // =======================
 var apiRoutes = express.Router();
-require('./app/modules/common/authentication/routes')(app, apiRoutes);
-require('./app/modules/setup/routes')(app, apiRoutes);
+require('./app/routes/account')(app, apiRoutes);
+require('./app/routes/setup')(app, apiRoutes);
 require('./app/routes/secured/routes')(app, apiRoutes);
 
 // apply the routes to our application with the prefix /api

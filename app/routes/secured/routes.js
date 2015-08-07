@@ -1,5 +1,5 @@
 var jwt    = require('jsonwebtoken'); // used to create, sign, and verify tokens
-var User   = require('../../modules/common/authentication/models/user');
+var User   = require('../../models/user');
 
 var securedRoutes = function(app, apiRoutes) {
 
