@@ -1,8 +1,8 @@
 {
   "name": "jwt-auth-server",
   "main": "server.js",
-  "private" : false,
-  "version" : "0.1.0",
+  "private": false,
+  "version": "0.1.0",
   "devDependencies": {
     "supertest": "0.5.x",
     "mocha": "1.8.x",
@@ -22,9 +22,10 @@
     "jsonwebtoken": "^5.0.4",
     "mongoose": "^4.1.1",
     "morgan": "^1.6.1",
-    "randomstring": "^1.0.7"
+    "randomstring": "^1.0.7",
+    "winston": "^1.0.1"
   },
   "scripts": {
-    "test" : "make test"
+    "test": "make test"
   }
 }
