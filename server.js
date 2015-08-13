@@ -8,7 +8,6 @@ var morgan      = require('morgan');
 var mongoose    = require('mongoose');
 
 var config = require('./config'); // get our config file
-// var User   = require('./app/modules/common/authentication/models/user'); // get our mongoose model
 
 // =======================
 // configuration =========
