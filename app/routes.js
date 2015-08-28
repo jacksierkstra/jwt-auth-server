@@ -13,6 +13,6 @@ var IoC = require('electrolyte');
  */
 module.exports = function routes() {
 
-  this.get('/', function(req, res) { return res.send('root url'); });
+  this.get('/', IoC.create('handlers/root'));
 
 }

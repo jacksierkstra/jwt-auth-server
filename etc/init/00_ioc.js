@@ -16,6 +16,7 @@ var ioc = require('electrolyte');
  */
 module.exports = function() {
 
+  ioc.loader('handlers', ioc.node('app/components/handlers'));
   ioc.loader(ioc.node('app/shared'));
 
 }
