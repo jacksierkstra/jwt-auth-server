@@ -19,6 +19,9 @@
   "dependencies": {
     "bcrypt": "^0.8.4",
     "body-parser": "^1.13.3",
+    "bootable": "^0.2.4",
+    "bootable-environment": "^0.2.0",
+    "electrolyte": "0.0.6",
     "express": "^4.13.3",
     "jsonwebtoken": "^5.0.4",
     "moment": "^2.10.6",
@@ -30,6 +33,7 @@
     "winston": "^1.0.1"
   },
   "scripts": {
+    "start" : "node bin/server.js",
     "test": "make test"
   }
 }
