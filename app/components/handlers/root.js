@@ -1,16 +1,19 @@
-exports = module.exports = function(settings, logger) {
+exports = module.exports = function(logger) {
+
+  function logRequest(req, res, next) {
+    logger.info(req.ip + ' ' + req.headers['user-agent']);
+    next();
+  }
 
   function homeSweetHome(req, res, next) {
-    res.send('There is no place like 127.0.0.1!');
+    res.status(200).json({'message' : 'There is no place like 127.0.0.1!'});
   }
 
   return [
+    logRequest,
     homeSweetHome
   ];
 
 };
 
-/**
- * Component annotations.
- */
-exports['@require'] = [ 'settings', 'logger'];
+exports['@require'] = [ 'logger'];

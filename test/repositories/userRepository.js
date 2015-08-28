@@ -2,15 +2,17 @@ var should = require('should'),
     assert = require('assert'),
     request = require('supertest');
 
+var UserRepository = require('./../../app/components/repositories/userRepository');
+
 describe('userRepository', function() {
 
+  var userRepository = new UserRepository();
 
-  it('Should send a notification e-mail when I register as a new user.',
+  it('Should return the user and not reject the promise.',
   function(done) {
-
-  done();
+    done();
   });
-  
+
   it('Should return an error message when a user already exists with that e-mail address.',
   function(done) {
 

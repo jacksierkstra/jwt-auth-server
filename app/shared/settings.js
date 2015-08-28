@@ -30,9 +30,6 @@ exports = module.exports = function() {
 
 }
 
-/**
- * Component annotations.
- */
 exports['@singleton'] = true;
 
 

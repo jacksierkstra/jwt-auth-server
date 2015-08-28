@@ -1,30 +1,30 @@
-var User = require('../models/user');
-var Q = require('q');
-
-function UserRepository() {
-  this.findById = findById;
-  // this.findByEmail = findByEmail;
-  // this.findByActivationCode = findByActivationCode;
-  // this.activateAccount = activateAccount;
-  // this.createAccount = createAccount;
-  // this.resetPassword = resetPassword;
-}
-
-function findById(id) {
-	var deferred = Q.defer();
-	var query = {
-		_id: id
-	};
-	User.findOne(query, function(err, user) {
-		if (err) {
-			deferred.reject(new Error(err));
-		}
-		else {
-			deferred.resolve(user);
-		}
-	});
-	return deferred.promise;
-}
+// var User = require('../models/user');
+// var Q = require('q');
+//
+// function UserRepository() {
+//   this.findById = findById;
+//   // this.findByEmail = findByEmail;
+//   // this.findByActivationCode = findByActivationCode;
+//   // this.activateAccount = activateAccount;
+//   // this.createAccount = createAccount;
+//   // this.resetPassword = resetPassword;
+// }
+//
+// function findById(id) {
+// 	var deferred = Q.defer();
+// 	var query = {
+// 		_id: id
+// 	};
+// 	User.findOne(query, function(err, user) {
+// 		if (err) {
+// 			deferred.reject(new Error(err));
+// 		}
+// 		else {
+// 			deferred.resolve(user);
+// 		}
+// 	});
+// 	return deferred.promise;
+// }
 
 // function findByEmail(email) {
 //   var deferred = Q.defer();
@@ -143,4 +143,30 @@ function findById(id) {
 //   var deferred = Q.defer();
 // }
 
-module.exports = UserRepository;
+// module.exports = UserRepository;
+
+exports = module.exports = function(userModel) {
+  var userRepository = new UserRepository(userModel);
+  return userRepository;
+};
+
+exports['@require'] = ['models/userModel'];
+
+
+function UserRepository(userModel) {
+  this.userModel = userModel;
+}
+
+UserRepository.prototype.findById = function(id) {
+
+  return this.userModel.find({ _id : id })
+  .then(function(){
+    console.log('niet faal');
+    return "niet faal";
+  })
+  .fail(function(){
+    console.log('faal');
+    return "faal";
+  });
+
+};

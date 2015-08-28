@@ -14,5 +14,6 @@ var IoC = require('electrolyte');
 module.exports = function routes() {
 
   this.get('/', IoC.create('handlers/root'));
+  this.post('/register', IoC.create('handlers/register'));
 
 }
